@@ -16,4 +16,21 @@ export default class UnsplashAPI {
   getAuthorizationURL = () => {
     return (API_AUTHORIZATION_URL + '/?' + this._autorizationParam);
   }
+
+  getToken = async (code) => {
+    try {
+      const tokenParams = 'client_id=' + ACCESS_KEY + '&' + 
+              'client_secret=' + SECRET_KEY +  '&' +
+              'redirect_uri=' + CALLBACK_URL + '&' +
+              'code=' + code + '&' +
+              'grant_type=' + 'authorization_code';
+          return await fetch(API_GET_TOKEN_URL + '?' + tokenParams, {method: "POST"})
+                      .then((res) => res.json())
+                      .then((data) => {
+                        return data.access_token;
+                      });
+    } catch(error){
+      console.log('Ошибка авторизации при получении токена: ', error);
+    }    
+  }
 };
