@@ -6,7 +6,7 @@ import './welcome.scss';
 
 const Welcome = () => {
   const { isAuthorized } = useSelector(state =>state.auth);
-  console.log('>>>> ', isAuthorized);
+  console.log('>>>> isAuthorized in Welcome Component >>>> ', isAuthorized);
 
   return(
     <div className="container">
