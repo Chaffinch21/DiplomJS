@@ -4,7 +4,7 @@ import './app.scss';
 
 const App = () => {
   return(
-    <div clasName="application">
+    <div className="application">
       App Component
     </div>
   );
