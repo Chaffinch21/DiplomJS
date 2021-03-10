@@ -6,6 +6,7 @@ import Welcome from '../pages/Welcome/welcome';
 import ErrorPage from '../pages/ErorrPage/error-page';
 import Tape from '../pages/Tape/tape';
 import PhotoItem from '../pages/PhotoItem/photo-item';
+import Authorization from '../pages/Authorization/authorization';
 
 import './app.scss';
 
@@ -15,6 +16,7 @@ const App = () => {
       <Header />
       <Switch>
         <Route exact path="/" component={Welcome} />
+        <Route path="/auth" component={Authorization} />
         <Route path="/tape"  component={Tape} />
         <Route path="/photo-item" component={PhotoItem} />
         <Route component={ErrorPage} />
