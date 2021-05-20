@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Header from '../Header/Header';
@@ -7,12 +7,19 @@ import PhotoItem from '../Pages/PhotoItem/PhotoItem';
 import PhotoTape from '../Pages/PhotoTape/PhotoTape';
 import ErrorPage from '../Pages/ErrorPage/ErrorPage';
 import Authorization from '../Pages/Authorization/Authorization';
+import { useToken } from '../hooks/useToken';
 
 import './app.scss';
 
 const App = () => {
   const [ isAuthorized, setIsAuthorized ] = useState(false);
-  const [ token, setToken] = useState('');
+  const [ token ] = useToken();
+
+  useEffect(()=>{
+    if(token !== '') {
+      setIsAuthorized(true);
+    }
+  }, [token]);
 
   return(
     <Router>
@@ -27,7 +34,7 @@ const App = () => {
               <PhotoItem />
             </Route>
             <Route path={"/auth"}>
-              <Authorization />
+              <Authorization isAuthorized={isAuthorized} setIsAuthorized={setIsAuthorized}/>
             </Route>
             <Route>
               <ErrorPage />
