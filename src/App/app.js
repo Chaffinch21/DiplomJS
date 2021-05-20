@@ -1,26 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import Header from '../components/Header/header';
-import Welcome from '../pages/Welcome/welcome';
-import ErrorPage from '../pages/ErorrPage/error-page';
-import Tape from '../pages/Tape/tape';
-import PhotoItem from '../pages/PhotoItem/photo-item';
-import Authorization from '../pages/Authorization/authorization';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import PhotoItem from '../Pages/PhotoItem/PhotoItem';
+import PhotoTape from '../Pages/PhotoTape/PhotoTape';
+import ErrorPage from '../Pages/ErrorPage/ErrorPage';
+import Authorization from '../Pages/Authorization/Authorization';
 
 import './app.scss';
 
 const App = () => {
+  const [ isAuthorized, setIsAuthorized ] = useState(false);
+  const [ token, setToken] = useState('');
+
   return(
     <Router>
-      <Header />
-      <Switch>
-        <Route exact path="/" component={Welcome} />
-        <Route path="/auth" component={Authorization} />
-        <Route path="/tape"  component={Tape} />
-        <Route path="/photo-item" component={PhotoItem} />
-        <Route component={ErrorPage} />
-      </Switch>      
+      <div className="appGrid">
+        <Header isAuthorized={isAuthorized}/>
+        <div className="mainContent">
+          <Switch>
+            <Route exact path={"/"}>
+              <PhotoTape isAuthorized={isAuthorized}/>
+            </Route>
+            <Route path={"/photo-item"}>
+              <PhotoItem />
+            </Route>
+            <Route path={"/auth"}>
+              <Authorization />
+            </Route>
+            <Route>
+              <ErrorPage />
+            </Route>
+          </Switch>
+        </div>
+        <Footer />
+      </div>
     </Router>
   );
 }

@@ -1,0 +1,6 @@
+$accent_color: #D22A1F;
+$second_color: #742E8E;
+
+@mixin animate {
+  transition: all ease-in-out 0.3s;    
+}
