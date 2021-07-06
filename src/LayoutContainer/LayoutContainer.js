@@ -1,9 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
 
+import Header from '../Header';
+
 const LayoutContainer = () => {
   return(
     <BrowserRouter>
+      <Header />
       <Switch>
         <Route exact path={'/'}>
           <span>Main</span>
