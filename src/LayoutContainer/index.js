@@ -1,11 +1,3 @@
-import React from 'react';
-
-const LayoutContainer = () => {
-  return(
-    <span>
-      LayoutContainer
-    </span>
-  )
-};
+import LayoutContainer from './LayoutContainer';
 
 export default LayoutContainer;
