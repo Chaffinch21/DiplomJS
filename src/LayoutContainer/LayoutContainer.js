@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
 
 import Header from '../Header';
+import Welcome from '../Pages/Welcome';
 
 const LayoutContainer = () => {
   return(
@@ -9,7 +10,7 @@ const LayoutContainer = () => {
       <Header />
       <Switch>
         <Route exact path={'/'}>
-          <span>Main</span>
+          <Welcome />
         </Route>
         <Route path={'/photo-item'}>
           <span>PhotoItem</span>

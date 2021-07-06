@@ -1,6 +1,6 @@
 const initialState = {
   token: {
-    token: '',
+    valueToken: '',
     loading: false,
     error: ''
   },
