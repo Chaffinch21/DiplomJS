@@ -1,10 +1,18 @@
 import React from 'react';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { Provider } from 'react-redux';
 
-import './app.scss';
+import rootReducers from '../store/reducers/rootReducer';
+import LayoutContainer from '../LayoutContainer';
+
+const store = createStore(rootReducers, applyMiddleware(thunk));
 
 const App = () => {
   return(
-    <span>App</span>
+    <Provider store={store}>
+      <LayoutContainer />
+    </Provider>
   );
 }
 
