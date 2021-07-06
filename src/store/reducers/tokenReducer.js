@@ -19,7 +19,7 @@ const tokenReducer = (state, action) => {
         ...state,
         loading: false,
         valueToken: action.valueToken,
-        error: '',
+        errorText: '',
       }
 
     case SET_TOKEN_ERROR:
@@ -27,7 +27,7 @@ const tokenReducer = (state, action) => {
         ...state,
         loading: false,
         valueToken: '',
-        error: action.errorText
+        errorText: action.errorText
       }
 
     default:

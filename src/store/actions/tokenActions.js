@@ -19,7 +19,7 @@ const setToken = () => {
   }
 }
 
-const setTokenSuccess = (valueToken) => {
+export const setTokenSuccess = (valueToken) => {
   return {
     type: SET_TOKEN_SUCCESS,
     valueToken,
@@ -49,6 +49,9 @@ export const setTokenAsync = (code) => (dispatch) => {
   .then((resp) => {
     const token = resp.data.access_token;
     dispatch(setTokenSuccess(token));
+    if (token !== '' && typeof token === 'string') {
+      localStorage.setItem('unspalashApiToken', token);
+    }
   })
   . catch((error) => {
     dispatch(setTokenError(String(error)));
