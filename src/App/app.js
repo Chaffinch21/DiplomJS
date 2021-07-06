@@ -1,5 +1,6 @@
 import React from 'react';
 import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 
@@ -8,7 +9,7 @@ import LayoutContainer from '../LayoutContainer';
 
 import '../style.global.scss';
 
-const store = createStore(rootReducers, applyMiddleware(thunk));
+const store = createStore(rootReducers, composeWithDevTools(applyMiddleware(thunk)));
 
 const App = () => {
   return(

@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route} from 'react-router-dom';
 
 import Header from '../Header';
 import Welcome from '../Pages/Welcome';
+import Authorization from '../Pages/Authorization';
 
 const LayoutContainer = () => {
   return(
@@ -19,7 +20,7 @@ const LayoutContainer = () => {
           <span>Photos</span>
         </Route>
         <Route path={'/auth'}>
-          <span>Authorization</span>
+          <Authorization />
         </Route>
         <Route path={'*'}>
           <span>Error</span>
