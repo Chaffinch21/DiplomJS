@@ -5,6 +5,7 @@ import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import Header from '../Header';
 import Welcome from '../Pages/Welcome';
 import Authorization from '../Pages/Authorization';
+import Photos from '../Pages/Photos';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import { setTokenSuccess } from '../store/actions/tokenActions';
 
@@ -31,7 +32,7 @@ const LayoutContainer = () => {
           <span>PhotoItem</span>
         </Route>
         <Route path={'/photos'}>
-          <span>Photos</span>
+          <Photos />
         </Route>
         <Route path={'/auth'}>
           <Authorization />

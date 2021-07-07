@@ -1,5 +1,7 @@
 const BASE_URL = 'https://unsplash.com/oauth/';
 
+const URL = 'https://api.unsplash.com/';
+
 const ACCESS_KEY = 'QGavZrwJlOUI5KBN1Y5Goqg01ZPVC0K5TaOllL0B9H8';
 const SECRET_KEY = 'yzxt8yxYd2ooTNtUpuuJKJmcr3jAsDGgrQfBlLqkMAY';
 const REDIRECT_URI = 'http://localhost:3000/auth';
@@ -15,5 +17,6 @@ export {
   REDIRECT_URI,
   SCOPE,
   AUTHORIZATION_URL,
-  POST_TOKEN_URL
+  POST_TOKEN_URL,
+  URL
 };

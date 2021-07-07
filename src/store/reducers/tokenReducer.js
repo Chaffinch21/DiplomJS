@@ -3,8 +3,9 @@ import {
   SET_TOKEN_ERROR,
   SET_TOKEN_SUCCESS
 } from '../constant';
+import {initialState} from './rootReducer';
 
-const tokenReducer = (state, action) => {
+const tokenReducer = (state = initialState.token, action) => {
   switch(action.type) {
     case SET_TOKEN:
       return {

@@ -34,7 +34,6 @@ const setTokenError = (errorText) => {
 }
 
 export const setTokenAsync = (code) => (dispatch) => {
-  console.log('code', code);
   dispatch(setToken());
   axios.post(`${POST_TOKEN_URL}`,
     `redirect_uri=${REDIRECT_URI}&code=${code}&grant_type=authorization_code`,

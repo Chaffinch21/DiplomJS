@@ -9,7 +9,6 @@ import './Welcome.scss';
 const Welcome = () => {
   const token = useSelector(state => state.token);
   const { valueToken } = token;
-  console.log(valueToken);
 
   return (
     <div className='container'>
