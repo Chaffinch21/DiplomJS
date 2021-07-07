@@ -22,7 +22,7 @@ export function useLocalStorage() {
         }
       })
       .catch((error) => {
-        console.log(error);
+        localStorage.removeItem('unspalashApiToken');
       })
 
   }, []);
