@@ -7,8 +7,6 @@ import { Provider } from 'react-redux';
 import rootReducers from '../store/reducers/rootReducer';
 import LayoutContainer from '../LayoutContainer';
 
-import '../style.global.scss';
-
 const store = createStore(rootReducers, composeWithDevTools(applyMiddleware(thunk)));
 
 const App = () => {

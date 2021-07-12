@@ -5,3 +5,7 @@ export const SET_TOKEN_ERROR = 'SET_TOKEN_ERROR';
 export const SET_ME = 'SET_ME';
 export const SET_ME_SUCCESS = 'SET_ME_SUCCESS';
 export const SET_ME_ERROR = 'SET_ME_ERROR';
+
+export const ADD_LIST_PHOTOS = 'ADD_LIST_PHOTOS';
+export const ADD_LIST_PHOTOS_SUCCESS = 'ADD_LIST_PHOTOS_SUCCESS';
+export const ADD_LIST_PHOTOS_ERROR = 'ADD_LIST_PHOTOS_ERROR';

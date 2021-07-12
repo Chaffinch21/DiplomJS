@@ -7,7 +7,11 @@ import {
   SET_ME,
   SET_ME_SUCCESS,
   SET_ME_ERROR,
+  ADD_LIST_PHOTOS,
+  ADD_LIST_PHOTOS_SUCCESS,
+  ADD_LIST_PHOTOS_ERROR,
 } from '../constant';
+import {listPhotosReducer} from "./listPhotosReducer";
 
 export const initialState = {
   token: {
@@ -22,6 +26,11 @@ export const initialState = {
     },
     loadingMe: false,
     errorTextMe: '',
+  },
+  listPhotos: {
+    data: [],
+    loadingListPhotos: false,
+    errorListPhotos: '',
   }
 }
 
@@ -41,6 +50,14 @@ const rootReducers = (state = initialState, action) => {
       return {
         ...state,
         me: meReducer(state.me, action),
+      }
+
+    case ADD_LIST_PHOTOS:
+    case ADD_LIST_PHOTOS_SUCCESS:
+    case ADD_LIST_PHOTOS_ERROR:
+      return {
+        ... state,
+        listPhotos: listPhotosReducer(state.listPhotos, action),
       }
 
     default:

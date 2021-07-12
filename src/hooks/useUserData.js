@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setMeAsync } from '../store/actions/meActions';
 
 export function useUserData() {
-  const { valueToken } = useSelector(state=> state.token);
+  const { valueToken } = useSelector(state => state.token);
   const dispatch = useDispatch();
 
   useEffect(() => {
