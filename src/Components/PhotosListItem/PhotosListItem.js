@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './PhotosListItem.scss';
 import { formatCreatedAt } from '../../helpers/fotmatCreatedAt';
@@ -24,7 +25,7 @@ const PhotosListItem = ({item}) => {
   }
 
   return(
-    <div className='photosListItem'>
+    <Link className='photosListItem' to={`/photo-item?id=${id}`}>
       <img className='photosListItem__preview' src={previewImageUrl} alt={altDescription}/>
       <span className='photosListItem__created'>
         {
@@ -56,7 +57,7 @@ const PhotosListItem = ({item}) => {
           {authorName}
         </span>
       </a>
-    </div>
+    </Link>
   );
 }
 

@@ -6,6 +6,7 @@ import Header from '../Header';
 import Welcome from '../Pages/Welcome';
 import Authorization from '../Pages/Authorization';
 import Photos from '../Pages/Photos';
+import PhotoItem from '../Pages/PhotoItem';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import { setTokenSuccess } from '../store/actions/tokenActions';
 
@@ -29,7 +30,7 @@ const LayoutContainer = () => {
           <Welcome />
         </Route>
         <Route path={'/photo-item'}>
-          <span>PhotoItem</span>
+          <PhotoItem />
         </Route>
         <Route path={'/photos'}>
           <Photos />
