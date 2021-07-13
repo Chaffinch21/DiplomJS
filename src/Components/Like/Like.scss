@@ -1,0 +1,52 @@
+@import '../../style.global';
+
+.like {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+
+    &__btn {
+      margin-right: 10px;
+    padding: 0;
+  }
+
+  &.mode {
+    &-white {
+      & svg .border-line {
+        fill: $white-color;
+      }
+
+      & svg .full-heart {
+        fill: transparent;
+      }
+
+      .like__count {
+        color: $white_color;
+      }
+    }
+
+    &-dark {
+      & svg .border-line {
+        fill: $dark-color;
+      }
+
+      & svg .full-heart {
+        fill: transparent;
+      }
+
+      .like__count {
+        color: $dark_color;
+      }
+    }
+  }
+
+  &__btn:hover svg {
+    & .border-line,
+    & .full-heart {
+      fill: red;
+    }
+  }
+}

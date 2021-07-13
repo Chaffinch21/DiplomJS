@@ -36,7 +36,6 @@ export const addListAsync = (token) => (dispatch) => {
     }
   })
     .then((resp) => {
-      console.log(resp.data);
       const photos = resp.data.map(
         (item) => {
           return formatItemPhotosList(item);

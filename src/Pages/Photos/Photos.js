@@ -6,8 +6,6 @@ import { useListData } from '../../hooks/useListData';
 import Loader from '../../Components/Loader';
 import PhotosListItem from '../../Components/PhotosListItem';
 
-import './Photos.scss';
-
 const Photos = () => {
   const { valueToken } = useSelector(state => state.token);
   const { loadingListPhotos, data, errorListPhotos } = useSelector(state => state.listPhotos);

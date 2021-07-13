@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './PhotosListItem.scss';
 import { formatCreatedAt } from '../../helpers/fotmatCreatedAt';
+import Like from '../Like';
+
+import './PhotosListItem.scss';
+
 
 const PhotosListItem = ({item}) => {
   const {
@@ -20,10 +23,6 @@ const PhotosListItem = ({item}) => {
     authorName,
   } = author;
 
-  const toggleLike = () => {
-    alert('Toggle Like');
-  }
-
   return(
     <Link className='photosListItem' to={`/photo-item?id=${id}`}>
       <img className='photosListItem__preview' src={previewImageUrl} alt={altDescription}/>
@@ -32,17 +31,8 @@ const PhotosListItem = ({item}) => {
           formatCreatedAt(createdAt)
         }
       </span>
-      <div className='photosListItem__like'>
-        <button
-          className='photosListItem__like-btn'
-          onClick={toggleLike}
-        >
-          Like
-        </button>
-        <span className='photosListItem__like-count'>
-          {countLikes}
-        </span>
-      </div>
+
+      <Like countLikes={countLikes} mode={'white'} photoId={id} />
 
       <a className='photosListItem__userLink'
         href={authorProfileLink}

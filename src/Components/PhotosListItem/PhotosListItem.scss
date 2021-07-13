@@ -19,16 +19,6 @@
     height: 100%;
   }
 
-  &__like {
-    position: absolute;
-    right: 15px;
-    top: 15px;
-
-    &-count {
-      color: $white_color;
-    }
-  }
-
   &__userLink {
     position: absolute;
     bottom: 15px;
