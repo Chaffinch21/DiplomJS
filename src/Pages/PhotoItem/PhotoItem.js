@@ -48,7 +48,7 @@ const PhotoItem = () => {
         <span className='photoItem__created'>
           { formatCreatedAt(createdAt) }
         </span>
-        <Like countLikes={countLikes} photoId={id}/>
+        <Like countLikes={countLikes} photoId={id} likedByUser={likedByUser}/>
         <img src={fullImageUrl} alt={altDescription}/>
       </div>
     </div>

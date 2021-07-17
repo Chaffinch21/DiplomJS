@@ -1,5 +1,7 @@
 import tokenReducer from './tokenReducer';
 import meReducer from './meReducer';
+import { listPhotosReducer } from './listPhotosReducer';
+import { likeUnlikePhotoReducer } from './likeUnlikePhotoReducer';
 import {
   SET_TOKEN,
   SET_TOKEN_SUCCESS,
@@ -10,8 +12,13 @@ import {
   ADD_LIST_PHOTOS,
   ADD_LIST_PHOTOS_SUCCESS,
   ADD_LIST_PHOTOS_ERROR,
+  LIKE_PHOTO,
+  LIKE_PHOTO_SUCCESS,
+  LIKE_PHOTO_ERROR,
+  UNLIKE_PHOTO,
+  UNLIKE_PHOTO_SUCCESS,
+  UNLIKE_PHOTO_ERROR
 } from '../constant';
-import {listPhotosReducer} from "./listPhotosReducer";
 
 export const initialState = {
   token: {
@@ -58,6 +65,17 @@ const rootReducers = (state = initialState, action) => {
       return {
         ... state,
         listPhotos: listPhotosReducer(state.listPhotos, action),
+      }
+
+    case LIKE_PHOTO:
+    case LIKE_PHOTO_SUCCESS:
+    case LIKE_PHOTO_ERROR:
+    case UNLIKE_PHOTO:
+    case UNLIKE_PHOTO_SUCCESS:
+    case UNLIKE_PHOTO_ERROR:
+      return {
+        ...state,
+        listPhotos: likeUnlikePhotoReducer(state.listPhotos, action),
       }
 
     default:

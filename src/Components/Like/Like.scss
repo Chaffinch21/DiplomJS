@@ -50,3 +50,10 @@
     }
   }
 }
+
+.like.likeByUser svg {
+  & .border-line,
+  & .full-heart {
+    fill: red;
+  }
+}

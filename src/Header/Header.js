@@ -20,7 +20,7 @@ const Header = () => {
 
   return(
     <div className={'container'}>
-      <div className={'header__content'}>
+      <div className={'header header__content'}>
         <Link to={'/'}>
           Save Moment
         </Link>
@@ -34,9 +34,11 @@ const Header = () => {
           {
             (valueToken !== '') &&
               <button
-                datatooltip={'Exit'}
+                className='header__btn-exit'
                 onClick={exitApp}>
-                <img src={userAvatar}/>
+                <span className='header__avatar'>
+                  <img src={userAvatar} alt={'Avatar of User'}/>
+                </span>
                 {
                   loadingMe ? (
                     <span>Loading...</span>

@@ -15,6 +15,7 @@ const PhotosListItem = ({item}) => {
     countLikes,
     createdAt,
     author,
+    likedByUser,
   } = item;
 
   const {
@@ -32,7 +33,7 @@ const PhotosListItem = ({item}) => {
         }
       </span>
 
-      <Like countLikes={countLikes} mode={'white'} photoId={id} />
+      <Like countLikes={countLikes} mode={'white'} photoId={id} likedByUser={likedByUser}/>
 
       <a className='photosListItem__userLink'
         href={authorProfileLink}
